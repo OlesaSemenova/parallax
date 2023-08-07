@@ -1,0 +1,582 @@
+@charset "UTF-8";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "Arial";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Arial";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+body {
+  background-color: #000;
+}
+
+.lock body {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: all 1.5s ease 0s;
+  transition: all 1.5s ease 0s;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
+[class*=__container] {
+  max-width: 73.125rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.wrapper.active {
+  opacity: 1;
+}
+
+.wrapper.active .parallax__wave {
+  opacity: 1;
+  -webkit-transition: all 1.5s ease 1s;
+  transition: all 1.5s ease 1s;
+}
+
+.wrapper.active .parallax__rope {
+  opacity: 1;
+  -webkit-transition: all 1.5s ease 1.8s;
+  transition: all 1.5s ease 1.8s;
+}
+
+.wrapper.active .parallax__litehouse {
+  bottom: 120px;
+  -webkit-transition: all 1.5s ease 2.5s;
+  transition: all 1.5s ease 2.5s;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 360px;
+}
+
+.parallax {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(60%, rgb(0, 0, 0)));
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 60%);
+}
+
+.parallax__list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.parallax__list li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.no-webp .parallax__bg{
+  background: url("../img/background.jpg") 50% 100%/cover no-repeat; }
+
+.parallax__bg {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: -5%;
+}
+
+.parallax__rope {
+  position: absolute;
+  width: 120%;
+  left: -10%;
+  opacity: 0;
+}
+
+.parallax__rope img {
+  width: 100%;
+}
+
+.parallax__rope_1 {
+  top: 5%;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.parallax__rope_2 {
+  top: -1.66667%;
+  -webkit-transform: scale(1.05556);
+      -ms-transform: scale(1.05556);
+          transform: scale(1.05556);
+}
+
+.parallax__rope_3 {
+  top: -11.66667%;
+  -webkit-transform: scale(1.13889);
+      -ms-transform: scale(1.13889);
+          transform: scale(1.13889);
+}
+
+.parallax__element {
+  position: absolute;
+}
+
+.parallax__element .parallax__rope_1 {
+  -webkit-transform: scale(0.6);
+      -ms-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+.parallax__element .parallax__rope_2 {
+  -webkit-transform: scale(0.75556);
+      -ms-transform: scale(0.75556);
+          transform: scale(0.75556);
+}
+
+.parallax__element .parallax__rope_3 {
+  -webkit-transform: scale(0.98889);
+      -ms-transform: scale(0.98889);
+          transform: scale(0.98889);
+}
+
+.parallax__element span {
+  display: inline-block;
+  -webkit-transform-origin: 50% 0;
+      -ms-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  width: 280px;
+  height: 280px;
+  margin: 0 0 0 -140px;
+  -webkit-animation: swing 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation: swing 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.parallax__element_1 {
+  top: 46%;
+  left: 20%;
+}
+
+.no-webp .parallax__element_1 span{
+  background: url("../img/clouds/board-cloud-2.png") 0 0/100% no-repeat; }
+
+.parallax__element_2 {
+  top: 46%;
+  left: 40%;
+}
+
+.no-webp .parallax__element_2 span{
+  background: url("../img/clouds/board-cloud-1.png") 0 0/100% no-repeat; }
+
+.parallax__element_3 {
+  top: 46%;
+  left: 80%;
+}
+
+.no-webp .parallax__element_3 span{
+  background: url("../img/clouds/board-birds.png") 0 0/100% no-repeat; }
+
+.parallax__element_4 {
+  top: 41%;
+  left: 17%;
+}
+
+.no-webp .parallax__element_4 span{
+  background: url("../img/clouds/board-cloud-1.png") 0 0/100% no-repeat; }
+
+.parallax__element_5 {
+  top: 72%;
+  left: 56%;
+}
+
+.no-webp .parallax__element_5 span{
+  background: url("../img/clouds/board-cloud-4.png") 0 0/100% no-repeat; }
+
+.parallax__element_6 {
+  top: 68%;
+  left: 50%;
+}
+
+.no-webp .parallax__element_6 span{
+  background: url("../img/clouds/board-birds.png") 0 0/100% no-repeat; }
+
+.parallax__element_7 {
+  top: 66%;
+  left: 40%;
+}
+
+.no-webp .parallax__element_7 span{
+  background: url("../img/clouds/board-cloud-2.png") 0 0/100% no-repeat; }
+
+.parallax__element_8 {
+  top: 62%;
+  left: 65%;
+}
+
+.no-webp .parallax__element_8 span{
+  background: url("../img/clouds/board-cloud-3.png") 0 0/100% no-repeat; }
+
+.no-webp .parallax__wave{
+  background: url("../img/waves/wave-paint.png") 0 0/auto 101% repeat-x; }
+
+.parallax__wave {
+  position: absolute;
+  left: -100%;
+  width: 300%;
+  opacity: 0;
+}
+
+.no-webp .parallax__wave_1{
+  background: url("../img/waves/wave-plain.png") 0 0/auto 101% repeat-x; }
+
+.parallax__wave_1 {
+  bottom: 180px;
+  height: 86px;
+  -webkit-animation: wave 7.11111s 0.1s infinite linear;
+          animation: wave 7.11111s 0.1s infinite linear;
+}
+
+.parallax__wave_2 {
+  bottom: 144px;
+  height: 115px;
+  -webkit-animation: wave 6.66667s 0.1s infinite linear;
+          animation: wave 6.66667s 0.1s infinite linear;
+}
+
+.no-webp .parallax__wave_3{
+  background: url("../img/waves/wave-plain.png") 0 0/auto 101% repeat-x; }
+
+.parallax__wave_3 {
+  bottom: 108px;
+  height: 144px;
+  -webkit-animation: wave 6.22222s 0.1s infinite linear;
+          animation: wave 6.22222s 0.1s infinite linear;
+}
+
+.parallax__wave_4 {
+  bottom: 72px;
+  height: 173px;
+  -webkit-animation: wave 5.77778s 0.1s infinite linear;
+          animation: wave 5.77778s 0.1s infinite linear;
+}
+
+.parallax__wave_5 {
+  bottom: -1px;
+  height: 230px;
+  -webkit-animation: wave 4.88888s 0.1s infinite linear;
+          animation: wave 4.88888s 0.1s infinite linear;
+}
+
+.no-webp .parallax__wave_6{
+  background: url("../img/waves/wave-plain.png") 0 0/auto 101% repeat-x; }
+
+.parallax__wave_6 {
+  bottom: -72px;
+  height: 288px;
+  -webkit-animation: wave 4.5s 0.1s infinite linear;
+          animation: wave 4.5s 0.1s infinite linear;
+}
+
+.no-webp .parallax__litehouse{
+  background: url("../img/lighthouse.png") 0 0 no-repeat; }
+
+.parallax__litehouse {
+  width: 320px;
+  height: 560px;
+  position: absolute;
+  right: 12%;
+  bottom: -100%;
+  -webkit-animation: litehouse 4s 0.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation: litehouse 4s 0.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@-webkit-keyframes swing {
+  0% {
+    -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(-10deg);
+            transform: rotateZ(-10deg);
+  }
+}
+
+@keyframes swing {
+  0% {
+    -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(-10deg);
+            transform: rotateZ(-10deg);
+  }
+}
+
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+            transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
+            transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
+  }
+}
+
+@keyframes wave {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+            transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
+            transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
+  }
+}
+
+@-webkit-keyframes litehouse {
+  0% {
+    -webkit-transform: translate3d(15%, 0%, 0) rotateZ(10deg);
+            transform: translate3d(15%, 0%, 0) rotateZ(10deg);
+  }
+
+  100% {
+    -webkit-transform: translate3d(-15%, 0%, 0) rotateZ(-10deg);
+            transform: translate3d(-15%, 0%, 0) rotateZ(-10deg);
+  }
+}
+
+@keyframes litehouse {
+  0% {
+    -webkit-transform: translate3d(15%, 0%, 0) rotateZ(10deg);
+            transform: translate3d(15%, 0%, 0) rotateZ(10deg);
+  }
+
+  100% {
+    -webkit-transform: translate3d(-15%, 0%, 0) rotateZ(-10deg);
+            transform: translate3d(-15%, 0%, 0) rotateZ(-10deg);
+  }
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+
+.webp .parallax__bg{ background: url(../img/background.webp) 50% 100%/cover no-repeat; }
+
+.webp .parallax__element_1 span{ background: url(../img/clouds/board-cloud-2.webp) 0 0/100% no-repeat; }
+
+.webp .parallax__element_2 span{ background: url(../img/clouds/board-cloud-1.webp) 0 0/100% no-repeat; }
+
+.webp .parallax__element_3 span{ background: url(../img/clouds/board-birds.webp) 0 0/100% no-repeat; }
+
+.webp .parallax__element_4 span{ background: url(../img/clouds/board-cloud-1.webp) 0 0/100% no-repeat; }
+
+.webp .parallax__element_5 span{ background: url(../img/clouds/board-cloud-4.webp) 0 0/100% no-repeat; }
+
+.webp .parallax__element_6 span{ background: url(../img/clouds/board-birds.webp) 0 0/100% no-repeat; }
+
+.webp .parallax__element_7 span{ background: url(../img/clouds/board-cloud-2.webp) 0 0/100% no-repeat; }
+
+.webp .parallax__element_8 span{ background: url(../img/clouds/board-cloud-3.webp) 0 0/100% no-repeat; }
+
+.webp .parallax__wave{ background: url(../img/waves/wave-paint.webp) 0 0/auto 101% repeat-x; }
+
+.webp .parallax__wave_1{ background: url(../img/waves/wave-plain.webp) 0 0/auto 101% repeat-x; }
+
+.webp .parallax__wave_3{ background: url(../img/waves/wave-plain.webp) 0 0/auto 101% repeat-x; }
+
+.webp .parallax__wave_6{ background: url(../img/waves/wave-plain.webp) 0 0/auto 101% repeat-x; }
+
+.webp .parallax__litehouse{ background: url(../img/lighthouse.webp) 0 0 no-repeat; }
